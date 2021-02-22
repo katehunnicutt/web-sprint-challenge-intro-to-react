@@ -31,12 +31,16 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+    React JS solves the problem of having the dom operations refresh the entire page when only one part changes. This can become a very extensive and complex issue as it is lengthy and expensive. React slices these components into different layers and only changes the one page/piece. this is seen within this project with characterInfo as well as in the nasa photo of the day. react only updates the single photo instead of the whole code.
 
 1. Describe component state.
+    component state is the ability to change a components properties/data and how it behaves depending on the situation we make for it. Because props are read-only we need something that allows us to manipulate the data.
 
 1. Describe props.
+    props is short for properties and is react specific. it enables us to pass data between components, letting them talk to eachother and letting the data pass down from a parent components to the child.
 
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+    side effects are exactly what they sound like. they are things that happen in the background of our code and not within the specific function we are initializing.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 

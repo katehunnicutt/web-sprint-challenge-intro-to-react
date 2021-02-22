@@ -6,3 +6,14 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+.Content{
+  color: #2A363B;
+  text-emphasis: bold;
+  text-size-adjust: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  padding: 5%;
+  
+}
+

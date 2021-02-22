@@ -1,7 +1,7 @@
 // Write your Character component here
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import characterInfo from './CharacterInfo'
+import CharacterInfo from './CharacterInfo'
 
 
 function Character() {
@@ -39,24 +39,30 @@ const closeInfo = () => {
 
 const Character = props => (
   <div className = 'character'>
-    {props.info}
-    <button onClick={() => openInfo(props)}>
-      learn more
-    </button>
+    {props.info.name}
+
   </div>
 )
 return (
   <div>
     {
-    characters ? (characters.map(characters => {
-      return <Character key={characters.id} info={characters} />
+    characters ? (characters.map(character => {
+      return (
+      <span>
+        <h2>{character.name}</h2>
+      
+
+      <CharacterInfo key={character.id} info={character} /> 
+      </span>
+      )
 
       })
     ): null
     }
     {
-  currentCharacterName && <Character characterName={currentCharacterName} close={closeInfo}/>
+  currentCharacterName && <CharacterInfo characterName={currentCharacterName} close={closeInfo}/>
 }
+
 </div>
 )
 }
