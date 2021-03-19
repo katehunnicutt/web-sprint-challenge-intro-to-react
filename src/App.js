@@ -1,18 +1,22 @@
 import React from 'react';
 import './App.css';
-import axios from 'axios'
 import Characters from './components/Characters'
 import styled from "styled-components";
 
 
-const StyledApp = styled.div``
+const StyledApp = styled.div`
+h1{
+  color: yellow;
+}
+`
 
 const App = () => {
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
       <StyledApp className = "Content">
       <Characters />
+
+      <h1 className="Header">React Wars</h1>
       </StyledApp>
     </div>
   );
