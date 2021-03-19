@@ -37,7 +37,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
     component state is the ability to change a components properties/data and how it behaves depending on the situation we make for it. Because props are read-only we need something that allows us to manipulate the data.
 
 1. Describe props.
-    props is short for properties and is react specific. it enables us to pass data between components, letting them talk to eachother and letting the data pass down from a parent components to the child.
+    props is short for properties and is react specific. it enables us to pass data down via components, letting them talk to eachother and letting the data pass down from a parent components to the child.
 
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
     side effects are exactly what they sound like. they are things that happen in the background of our code and not within the specific function we are initializing.

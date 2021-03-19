@@ -1,67 +1,24 @@
 // Write your Character component here
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import CharacterInfo from './CharacterInfo'
+import React, { useState } from "react";
+import CharacterInfo from "./CharacterInfo";
 
+export default function Character({character}) {
+  //shortcut destructuring 
+  const [showInfo, setShowInfo] = useState(true);
 
-
-
-function Character() {
-const [characters, setCharacters] = useState([])
-const [currentCharacterName, setCurrentCharacterName] = useState(null)
-
-//giving the initial info
-  useEffect(() => {
-    const getCharacter = () => {
-      axios.get(`https://swapi.dev/api/people/`)
-        .then(res => {
-          setCharacters(res.data)
-        })
-        .catch(err=> {
-        })
-    }
-    getCharacter()
-  }, [])
-
-
-
-
-// displayQuestion = () => {
-//   this.setState({
-//       displayQuestions: !this.state.displayQuestions
-//   })
-// }
-
-const closeInfo = () => {
-    setCurrentCharacterName(null)
-}
-
-const Character = props => (
-  <div className = 'character'>
-    {props.info.name}
-
-  </div>
-)
-return (
-  <div>
-    {
-    characters ? (characters.map(character => {
-      return (
-      <span>
-        <h2>{character.name}</h2>
+  const toggleInfo = () => {
+    setShowInfo(!showInfo);
+  };
   
-      <CharacterInfo key={character.id} info={character} /> 
-      </span>
-      )
-
-      })
-    ): null
-    }
-    {
-  currentCharacterName && <CharacterInfo characterName={currentCharacterName} close={closeInfo}/>
+  return (
+    <span>
+      <h2>{character.name}</h2>
+      {showInfo && (
+        <CharacterInfo key={character.id} info={character} />
+      )}
+      <button id="toggleInfo" onClick={toggleInfo}>
+        {showInfo ? "Hide" : "More"} Info
+      </button>
+    </span>
+  );
 }
-
-</div>
-)
-}
-export default Character;
