@@ -4,6 +4,8 @@ import axios from 'axios'
 import CharacterInfo from './CharacterInfo'
 
 
+
+
 function Character() {
 const [characters, setCharacters] = useState([])
 const [currentCharacterName, setCurrentCharacterName] = useState(null)
@@ -22,9 +24,6 @@ const [currentCharacterName, setCurrentCharacterName] = useState(null)
   }, [])
 
 
-const openInfo = id => {
-    setCurrentCharacterName(id)
-}
 
 
 // displayQuestion = () => {
@@ -50,8 +49,7 @@ return (
       return (
       <span>
         <h2>{character.name}</h2>
-      
-
+  
       <CharacterInfo key={character.id} info={character} /> 
       </span>
       )

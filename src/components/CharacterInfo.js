@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+ import React from 'react'
+// import axios from 'axios'
 
 function CharacterInfo(props) {
-    const { info, close } = props
+    const { info } = props
 
 return (
     <div className = 'container'>
@@ -15,8 +15,6 @@ return (
         <p> Gender: {info.gender} </p>
         <p> Birth Year: {info.birth_year} </p>
 
-
-      <button onClick={close}> close </button>
     </div>
 )
 }
